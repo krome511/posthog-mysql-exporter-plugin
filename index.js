@@ -12,6 +12,7 @@ export async function setupPlugin({ config }) {
 
 // Plugin method that processes event
 export async function processEvent(event, { config, cache }) {
+    console.log('Inside JS, not TS!!!!');
     const counterValue = (await cache.get('greeting_counter', 0))
     cache.set('greeting_counter', counterValue + 1)
     if (!event.properties) event.properties = {}
